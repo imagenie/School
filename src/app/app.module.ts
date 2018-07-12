@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -26,7 +27,41 @@ import { AttendenceComponent } from './attendence/attendence.component';
     AttendenceComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path:'',
+        component:HomeComponent
+      },
+      {
+        path:'student',
+        component:StudentComponent
+      },
+      {
+        path:'teacher',
+        component:TeacherComponent
+      },
+      {
+        path:'student-home',
+        component:StudentHomeComponent
+      },
+      {
+        path:'admission',
+        component:AdmissionComponent
+      },
+      {
+        path:'fees',
+        component:FeesComponent
+      },
+      {
+        path:'attendance',
+        component:AttendenceComponent
+      },
+      {
+        path:'**',
+        component:ErrorComponent
+      },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
